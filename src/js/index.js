@@ -4,10 +4,21 @@
 import 'datatables.net'
 import 'datatables.net-buttons-dt'
 import 'datatables.net-select-dt'
+import 'datatables.net-editor'
 
+
+let editor;
 
 // eslint-disable-next-line no-undef
 $(() => {
+
+  editor = new $.fn.dataTable.Editor( {
+    table: '#table',
+    fields: [
+      { label: 'email', name: 'email' },
+      // etc
+    ]
+  } );
 
   const demoItems = [
     {'email': 'hello@example.com'}
